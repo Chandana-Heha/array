@@ -1,37 +1,44 @@
 #include <stdio.h>
-
-int main()
-{
-    printf("chandana");
-    int arr[100], n;
-    int largest, secondLargest;
-
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-
-    printf("Enter array elements:\n");
-    for (int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-
-    if (arr[0] > arr[1]) {
-        largest = arr[0];
-        secondLargest = arr[1];
-    } else {
-        largest = arr[1];
-        secondLargest = arr[0];
-    }
-
-    for (int i = 2; i < n; i++) {
-        if (arr[i] > largest) {
-            secondLargest = largest;
-            largest = arr[i];
-        }
-        else if (arr[i] > secondLargest && arr[i] != largest) {
-            secondLargest = arr[i];
-        }
-    }
-
-    printf("Second largest number = %d", secondLargest);
-
-    return 0;
+#include <stdlib.h>
+struct node{
+int data;
+struct node *prev;
+struct node *next;
+};
+void insert (struct node **head,int x,int pas){
+struct node *newnode = malloc(sizeof(struct node))
+if (pas==1){
+newnode ->prev=NULL;
+newnode ->next=*head;
+if (*head=NULL){
+       (*head) ->prev = newnode;
+*heanewnode;}
 }
+else{
+      struct node *temp=*head;
+      for(int i=1;i<pos-1 && temp!=NULL;i++)
+                temp=temp ->next;
+                if (temp!=NULL){
+                newnode ->next=temp ->next;
+                newnode ->prev=temp;
+                if (temp ->next!=NULL)
+                       temp ->next ->prev =newnode;
+                temp ->next=newnode;
+                else{
+                free(newnode);}
+             } 
+}
+void display(){
+}
+int main(){
+struct node*head=NULL;
+insert(&head,10,1);
+insert(&head,20,1);
+insert(&head,20,1);
+display(head);
+printf("code completes\n");
+}
+return 0;
+ 
+               
+                       
